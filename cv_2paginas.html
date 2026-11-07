@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CV Completo - Juan José Marco Ortega</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1e293b;
+      background: #f1f5f9;
+      line-height: 1.45;
+      font-size: 12px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto 10mm auto;
+      background: #ffffff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media print {
+      body {
+        background: transparent;
+      }
+      .page {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #091322 0%, #1e293b 55%, #0284c7 100%);
+      color: #ffffff;
+      padding: 26px 36px 20px 36px;
+    }
+
+    .page-2-header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 14px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #0284c7;
+    }
+
+    .page-2-header h2 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    .page-2-header span {
+      font-size: 11px;
+      color: #38bdf8;
+      font-weight: 500;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .name-role {
+      flex: 1;
+    }
+
+    .header-photo {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .profile-photo {
+      width: 104px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: 3px solid #38bdf8;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+      background: #0f172a;
+    }
+
+    .name-role h1 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 5px;
+      color: #ffffff;
+    }
+
+    .name-role .title-badge {
+      display: inline-block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      margin-bottom: 9px;
+    }
+
+    .summary-text {
+      color: #cbd5e1;
+      font-size: 11.5px;
+      line-height: 1.5;
+      max-width: 720px;
+    }
+
+    .summary-text strong {
+      color: #ffffff;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 22px;
+      margin-top: 13px;
+      padding-top: 11px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 10.8px;
+      color: #e2e8f0;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-item a:hover {
+      color: #38bdf8;
+      text-decoration: underline;
+    }
+
+    .contact-item svg {
+      width: 13px;
+      height: 13px;
+      fill: none;
+      stroke: #38bdf8;
+      stroke-width: 2.2;
+    }
+
+    /* BODY COLUMNS */
+    .content-body {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      flex-grow: 1;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      background: #f8fafc;
+      border-right: 1px solid #e2e8f0;
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .side-block h3 {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #0369a1;
+      margin-bottom: 9px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 2px solid #bae6fd;
+      padding-bottom: 4px;
+    }
+
+    .tech-group {
+      margin-bottom: 11px;
+    }
+
+    .tech-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .tech-group-title {
+      font-size: 10.2px;
+      font-weight: 700;
+      color: #475569;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .skills-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .pill {
+      font-size: 10px;
+      background: #ffffff;
+      color: #0f172a;
+      padding: 2px 6.5px;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+      font-weight: 500;
+    }
+
+    .pill.highlight {
+      background: #e0f2fe;
+      color: #0369a1;
+      border-color: #7dd3fc;
+      font-weight: 600;
+    }
+
+    .soft-skill-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 10.5px;
+      color: #334155;
+      margin-bottom: 7px;
+      line-height: 1.38;
+    }
+
+    .soft-skill-item span.bullet {
+      color: #0284c7;
+      font-weight: bold;
+      font-size: 11.5px;
+      line-height: 1;
+    }
+
+    .edu-item {
+      margin-bottom: 11px;
+    }
+
+    .edu-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+
+    .edu-inst {
+      font-size: 10.2px;
+      color: #0284c7;
+      font-weight: 600;
+    }
+
+    .edu-date {
+      font-size: 9.8px;
+      color: #64748b;
+    }
+
+    /* MAIN COLUMN */
+    .main-column {
+      padding: 22px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: #ffffff;
+    }
+
+    .section-title {
+      font-size: 12.8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding-bottom: 4.5px;
+      border-bottom: 2px solid #0284c7;
+      margin-bottom: 13px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 17px;
+      border-left: 2px solid #e2e8f0;
+      margin-bottom: 16px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #0284c7;
+      border: 2px solid #ffffff;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .item-role {
+      font-size: 12.2px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .item-date {
+      font-size: 10.2px;
+      font-weight: 600;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    .item-company {
+      font-size: 11.2px;
+      font-weight: 600;
+      color: #0284c7;
+      margin-bottom: 4.5px;
+    }
+
+    .item-desc {
+      font-size: 10.8px;
+      color: #475569;
+      line-height: 1.4;
+      margin-bottom: 4.5px;
+    }
+
+    .achievements-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .achievements-list li {
+      font-size: 10.3px;
+      color: #334155;
+      margin-bottom: 3px;
+      position: relative;
+      padding-left: 13px;
+      line-height: 1.38;
+    }
+
+    .achievements-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #0284c7;
+      font-size: 10.5px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4.5px;
+      margin-top: 5px;
+    }
+
+    .tag-sm {
+      font-size: 9.3px;
+      background: #f8fafc;
+      color: #475569;
+      padding: 2px 6px;
+      border-radius: 3px;
+      border: 1px solid #e2e8f0;
+      font-weight: 500;
+    }
+
+    /* VALUE BANNER */
+    .value-banner {
+      background: #f0f9ff;
+      border-left: 3px solid #0284c7;
+      padding: 11px 13px;
+      border-radius: 0 4px 4px 0;
+      font-size: 10.8px;
+      color: #0369a1;
+      line-height: 1.43;
+    }
+
+    .value-banner strong {
+      color: #0c4a6e;
+    }
+
+    /* PAGE 2 FULL WIDTH SECTIONS */
+    .p2-container {
+      padding: 28px 38px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: calc(297mm - 50px);
+    }
+
+    .project-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 13px 15px;
+      margin-bottom: 11px;
+    }
+
+    .project-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .project-title {
+      font-size: 12.2px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .project-badge {
+      font-size: 9.8px;
+      font-weight: 600;
+      color: #0284c7;
+      background: #e0f2fe;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    .project-desc {
+      font-size: 10.8px;
+      color: #475569;
+      line-height: 1.4;
+      margin-bottom: 5px;
+    }
+
+    .footer-note {
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      font-size: 10.2px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== PÁGINA 1 ==================== -->
+<div class="page">
+  <!-- HEADER -->
+  <header>
+    <div class="header-top">
+      <div class="name-role">
+        <h1>Juan José Marco Ortega</h1>
+        <div class="title-badge">Desarrollo de Software & Agentes de IA en Formación | Conquer Blocks</div>
+        <p class="summary-text">
+          Soy una persona trabajadora, curiosa y con mucho mundo a mis espaldas. Tras años <strong>gestionando mis propios restaurantes, emprendiendo en diseño gráfico y recorriendo fincas agrícolas en estudios de mercado</strong>, me estoy formando a fondo en <strong>Conquer Blocks</strong> (cursando Máster en Desarrollo Web Full Stack y Máster en Inteligencia Artificial). Actualmente domino <strong>Python, bases de datos SQL, la terminal Linux, Git & GitHub y automatizaciones con Agentes de IA en Google Antigravity</strong>. Aporto madurez, templanza para resolver problemas reales y muchas ganas de aportar valor a un equipo técnico.
+        </p>
+      </div>
+      <div class="header-photo">
+        <img src="foto_perfil_oval.png" alt="Juan José Marco Ortega" class="profile-photo">
+      </div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <span>Yecla, Región de Murcia</span>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:marcoortegajuanjose@gmail.com">marcoortegajuanjose@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:+34694250860">+34 694 25 08 60</a>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <a href="https://www.linkedin.com/in/juan-jose-marco-ortega-8454912a2" target="_blank">linkedin.com/in/juan-jose-marco-ortega</a>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        <a href="https://github.com/marcoortegajuanjose-stack" target="_blank">github.com/marcoortegajuanjose-stack</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BODY CONTENT -->
+  <div class="content-body">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      
+      <!-- STACK & SKILLS -->
+      <div class="side-block">
+        <h3>Lo que domino hoy (Conquer Blocks)</h3>
+
+        <div class="tech-group">
+          <div class="tech-group-title">Programación & Entorno</div>
+          <div class="skills-pills">
+            <span class="pill highlight">Python</span>
+            <span class="pill highlight">SQL</span>
+            <span class="pill highlight">Linux y Terminal</span>
+            <span class="pill highlight">Git y GitHub</span>
+            <span class="pill">Pseudocódigo</span>
+            <span class="pill">Lógica Algorítmica</span>
+          </div>
+        </div>
+
+        <div class="tech-group">
+          <div class="tech-group-title">IA & Automatizaciones</div>
+          <div class="skills-pills">
+            <span class="pill highlight">Google Antigravity</span>
+            <span class="pill highlight">Agentes de IA</span>
+            <span class="pill">Automatizaciones</span>
+            <span class="pill">Workflows con IA</span>
+          </div>
+        </div>
+
+        <div class="tech-group">
+          <div class="tech-group-title">Diseño Gráfico (Trayectoria)</div>
+          <div class="skills-pills">
+            <span class="pill">Corel Draw</span>
+            <span class="pill">Adobe Photoshop</span>
+            <span class="pill">Adobe Illustrator</span>
+            <span class="pill">Diseño Vectorial</span>
+            <span class="pill">Preimpresión Técnica</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMACIÓN -->
+      <div class="side-block">
+        <h3>Formación Especializada</h3>
+        
+        <div class="edu-item">
+          <div class="edu-title">Máster en Desarrollo Web Full Stack</div>
+          <div class="edu-inst">Conquer Blocks (Academia Conquer)</div>
+          <div class="edu-date">En curso (2026)</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-title">Máster en Inteligencia Artificial</div>
+          <div class="edu-inst">Conquer Blocks (Academia Conquer)</div>
+          <div class="edu-date">En curso (2026)</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-title">Chef Profesional Microemprendimientos</div>
+          <div class="edu-inst">Gestión y Dirección Operativa</div>
+          <div class="edu-date">Titulación Oficial</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-title">Diseño Gráfico y Preimpresión Digital</div>
+          <div class="edu-inst">Suite Adobe & Corel Draw</div>
+          <div class="edu-date">Especialización Práctica</div>
+        </div>
+      </div>
+
+      <!-- IDIOMAS -->
+      <div class="side-block">
+        <h3>Idiomas</h3>
+        <div class="soft-skill-item">
+          <span class="bullet">▪</span>
+          <div><strong>Español:</strong> Nativo</div>
+        </div>
+        <div class="soft-skill-item">
+          <span class="bullet">▪</span>
+          <div><strong>Inglés:</strong> Básico (aprendiendo día a día)</div>
+        </div>
+        <div class="soft-skill-item">
+          <span class="bullet">▪</span>
+          <div><strong>Francés:</strong> Nociones básicas (en el recuerdo)</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN COLUMN -->
+    <main class="main-column">
+      
+      <!-- EXPERIENCIA REESTRUCTURADA (PÁGINA 1) -->
+      <section>
+        <h2 class="section-title">Experiencia Profesional Reenfocada</h2>
+
+        <!-- 1. RESTAURANTE BUENOS AIRES -->
+        <div class="timeline-item">
+          <div class="item-header">
+            <span class="item-role">Director de Operaciones & Chef Propietario</span>
+            <span class="item-date">12 Años | Buenos Aires</span>
+          </div>
+          <div class="item-company">Restaurante Propio & Gestión Gastronómica (La Rueda y Yakkar)</div>
+          <p class="item-desc">
+            Creación, dirección y gestión diaria de dos restaurantes propios en Buenos Aires. Una experiencia profunda de liderazgo real, templanza y optimización de recursos.
+          </p>
+          <ul class="achievements-list">
+            <li>Liderazgo y coordinación de equipo en cocina y sala con un ritmo diario de máxima exigencia.</li>
+            <li>Control riguroso de escandallos, costes de materia prima, márgenes de beneficio y trato directo con proveedores.</li>
+            <li>Resolución inmediata de incidencias diarias asegurando la calidad del servicio y la satisfacción del cliente.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag-sm">Liderazgo de Equipos</span>
+            <span class="tag-sm">Gestión del Estrés</span>
+            <span class="tag-sm">Control de Costes</span>
+            <span class="tag-sm">Operaciones Diarias</span>
+          </div>
+        </div>
+
+        <!-- 2. WEB BUENOS AIRES (LINCEDESIGN) -->
+        <div class="timeline-item">
+          <div class="item-header">
+            <span class="item-role">Diseño y Maquetación de Sitios Web</span>
+            <span class="item-date">5 Años | Buenos Aires, Argentina</span>
+          </div>
+          <div class="item-company">Proyectos Digitales Comerciales & Freelance (Lincedesign)</div>
+          <p class="item-desc">
+            Diseño y maquetación de páginas web para pymes y profesionales locales bajo mi proyecto independiente Lincedesign.
+          </p>
+          <ul class="achievements-list">
+            <li>Maquetación web comercial utilizando herramientas pioneras de referencia (Dreamweaver, Fireworks, Flash).</li>
+            <li>Escucha activa de las necesidades de cada cliente para traducirlas en sitios web claros y atractivos.</li>
+            <li>Tratamiento y optimización de gráficos digitales para reducir tiempos de carga y mejorar la experiencia.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag-sm">Maquetación Web</span>
+            <span class="tag-sm">Dreamweaver</span>
+            <span class="tag-sm">Fireworks</span>
+            <span class="tag-sm">Trato Directo con Cliente</span>
+          </div>
+        </div>
+
+        <!-- 3. PUBLICIDAD COMERCIAL MARCO -->
+        <div class="timeline-item">
+          <div class="item-header">
+            <span class="item-role">Fundador & Responsable de Producción y Diseño</span>
+            <span class="item-date">9 Años | Yecla y comarca</span>
+          </div>
+          <div class="item-company">Empresa de Reclamo Publicitario, Serigrafía y Rotulación COMERCIAL MARCO</div>
+          <p class="item-desc">
+            Fundación y dirección de empresa propia dando servicio gráfico, publicitario y de serigrafía técnica a empresas de la zona.
+          </p>
+          <ul class="achievements-list">
+            <li>Diseño gráfico vectorial y preparación de artes finales de impresión con Corel Draw, Photoshop e Illustrator.</li>
+            <li>Producción técnica en serigrafía de equipaciones deportivas y ropa laboral, rotulación comercial, cartelería y adhesivos.</li>
+            <li>Gestión completa del negocio: compras, negociación con proveedores, almacén, ventas y entrega puntual a clientes.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag-sm">Corel Draw</span>
+            <span class="tag-sm">Photoshop</span>
+            <span class="tag-sm">Illustrator</span>
+            <span class="tag-sm">Gestión de Almacén</span>
+            <span class="tag-sm">Ventas B2B</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- VALUE BANNER -->
+      <div class="value-banner">
+        <strong>Propuesta de Valor Diferencial:</strong>
+        Uno la madurez de quien ha gestionado negocios reales, liderado equipos y resuelto crisis operativas durante más de una década, con las bases técnicas que actualmente domino en Conquer Blocks (Python, SQL, Linux, Git y Agentes de IA). Aporto total honestidad técnica, capacidad de trabajo incansable, criterio de negocio y una rápida velocidad de asimilación.
+      </div>
+
+    </main>
+  </div>
+</div>
+
+
+<!-- ==================== PÁGINA 2 ==================== -->
+<div class="page">
+  <div class="page-2-header">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="foto_perfil_oval.png" alt="Juan José Marco Ortega" style="width: 24px; height: 30px; border-radius: 50%; border: 1.5px solid #38bdf8; object-fit: cover; display: block;">
+      <h2>Juan José Marco Ortega &bull; Trayectoria & Competencias</h2>
+    </div>
+    <span>Página 2 de 2</span>
+  </div>
+
+  <div class="p2-container">
+    
+    <!-- EXPERIENCIA OPERATIVA Y DE INVESTIGACIÓN (CONTINUACIÓN) -->
+    <section>
+      <h2 class="section-title">Investigación de Mercado & Trayectoria de Base</h2>
+
+      <!-- 4. ESTUDIOS DE MERCADO AGRÍCOLA (INSTITUTO MARKING) -->
+      <div class="timeline-item">
+        <div class="item-header">
+          <span class="item-role">Técnico de Investigación de Mercado Agrícola</span>
+          <span class="item-date">7 Años de Experiencia</span>
+        </div>
+        <div class="item-company">Consultoría de Campo y Prospección (Levante y Nacional) | Instituto Marking</div>
+        <p class="item-desc">
+          Investigación directa en fincas agrícolas por toda España, con especial dedicación a la zona del Levante.
+        </p>
+        <ul class="achievements-list">
+          <li><strong>Toma Rigurosa de Datos en Campo:</strong> Recopilación cara a cara de información de cosechas, rendimiento, precios y necesidades reales de los productores para el Instituto Marking.</li>
+          <li><strong>Análisis y Síntesis:</strong> Transformación de los datos recogidos en informes estructurados y prácticos para la toma de decisiones comerciales.</li>
+          <li><strong>Autonomía y Planificación:</strong> Organización de rutas por cuenta propia y comunicación fluida con todo tipo de perfiles agrarios y empresariales.</li>
+        </ul>
+        <div class="tag-row">
+          <span class="tag-sm">Toma de Datos</span>
+          <span class="tag-sm">Investigación de Campo</span>
+          <span class="tag-sm">Elaboración de Informes</span>
+          <span class="tag-sm">Trato Directo</span>
+        </div>
+      </div>
+
+      <!-- 5. BASES INDUSTRIALES -->
+      <div class="timeline-item">
+        <div class="item-header">
+          <span class="item-role">Bases Industriales y Atención Comercial</span>
+          <span class="item-date">Etapa de Consolidación</span>
+        </div>
+        <div class="item-company">Mercadona (2 años) | Lym Sa | Azorín Barona | Zapatería</div>
+        <p class="item-desc">
+          Mis primeros pasos laborales, donde aprendí el valor del esfuerzo diario, el orden y la disciplina:
+        </p>
+        <ul class="achievements-list">
+          <li><strong>Mercadona (2 años):</strong> Sección cárnica, servicio directo al público bajo estrictas normas de higiene, orden y protocolos de calidad.</li>
+          <li><strong>Lym Sa:</strong> Operario técnico en planta de perfiles de chapa metálica (precisión milimétrica, ritmo productivo y seguridad industrial).</li>
+          <li><strong>Azorín Barona:</strong> Fabricación artesanal de cuadros y molduras (destreza manual, cuidado por el detalle y acabado estético).</li>
+          <li><strong>Comercio de Calzado:</strong> Venta al público en zapatería desde muy joven, aprendiendo a escuchar y conectar con las personas.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- PROYECTOS / COMPETENCIAS CLAVE EN CONQUER BLOCKS -->
+    <section>
+      <h2 class="section-title">Habilidades Técnicas Consolidadas en Conquer Blocks</h2>
+
+      <div class="project-card">
+        <div class="project-card-header">
+          <span class="project-title">Python, SQL, Pseudocódigo & Algoritmia</span>
+          <span class="project-badge">Programación & Datos</span>
+        </div>
+        <p class="project-desc">
+          Fundamentos sólidos de lógica de programación, resolución de problemas con pseudocódigo, desarrollo de scripts funcionales con Python y consultas / modelado de bases de datos relacionales mediante SQL.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card-header">
+          <span class="project-title">Linux, Terminal & Control de Versiones</span>
+          <span class="project-badge">Entorno Profesional</span>
+        </div>
+        <p class="project-desc">
+          Manejo diario de la terminal y sistema operativo Linux (comandos Bash, gestión de archivos y permisos) y control de versiones profesional utilizando Git y repositorios en GitHub.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card-header">
+          <span class="project-title">Agentes de IA & Google Antigravity</span>
+          <span class="project-badge">Automatización & IA</span>
+        </div>
+        <p class="project-desc">
+          Implementación de flujos de trabajo automatizados, trabajo con agentes de Inteligencia Artificial para asistencia en desarrollo y orquestación de herramientas autónomas.
+        </p>
+      </div>
+
+    </section>
+
+    <div class="footer-note">
+      Juan José Marco Ortega &bull; Yecla, Región de Murcia &bull; marcoortegajuanjose@gmail.com &bull; +34 694 25 08 60
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
+
